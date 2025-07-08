@@ -26,17 +26,18 @@ All the input and output data are provided and can be found in the shared storag
 Please follow the steps in order, as each step produces intermediate results that are useful for the next part of the analysis. If you only want to reproduce certain notebooks, the intermediate data is already provided.
 
 1) The first step is to run the first notebook (1) to create output data. Verify that you obtain 25 different files at the end of the procedure. Note that this code was produced by my supervisor and I did not modify anything.
+A noter que ce code a été produit par mon superviseur, Gerhard Krinner, je choisi tout de même de le fournir puisque c'est le point de départ de mon stage.
 
-2) The second step is to convert all the useful files to a single, consistent reference grid for future comparisons. For this, use notebook (2). Run all the cells and verify that new folders have been created.
+3) The second step is to convert all the useful files to a single, consistent reference grid for future comparisons. For this, use notebook (2). Run all the cells and verify that new folders have been created.
 
-3) For these new files, it is necessary to recompute the areacella (the area of each grid cell), which is a very important variable for calculating the spatial extension of the snow. For this, run notebook (3).
+4) For these new files, it is necessary to recompute the areacella (the area of each grid cell), which is a very important variable for calculating the spatial extension of the snow. For this, run notebook (3).
 
-4) A supplementary step is necessary for a model that does not simulate snow in Greenland: the IPSL model. It is important to add snow data for this model using the sftgif mask (ice-land fraction) so that all models have the same characteristics. For this, use notebook (4).
+5) A supplementary step is necessary for a model that does not simulate snow in Greenland: the IPSL model. It is important to add snow data for this model using the sftgif mask (ice-land fraction) so that all models have the same characteristics. For this, use notebook (4).
 
-5) At this stage, we will have two output files for the IPSL model: one named "IPSL-CM6A-LR_SW_reprojete.nc" (the older one) and another named "IPSL-CM6A-LR2_SW_reprojete.nc" (the newer one). You need to manually delete the older file and rename the newer one to match the old name (simply remove the number "2").
+6) At this stage, we will have two output files for the IPSL model: one named "IPSL-CM6A-LR_SW_reprojete.nc" (the older one) and another named "IPSL-CM6A-LR2_SW_reprojete.nc" (the newer one). You need to manually delete the older file and rename the newer one to match the old name (simply remove the number "2").
 
-6) Now that all the models are consistent, we can visualize and compute the monthly snow extent for each model during the reference period (1995-2014). Snow extent values will be stored in a dictionary and exported to a CSV format for further analysis. For this, use notebook (5).
+7) Now that all the models are consistent, we can visualize and compute the monthly snow extent for each model during the reference period (1995-2014). Snow extent values will be stored in a dictionary and exported to a CSV format for further analysis. For this, use notebook (5).
 
-7) Once the dictionary is extracted, we can compare these values to real observation data of the snow in order to detect which models performed well and which ones performed poorly. To do this, run notebook (6). This step calculates the differences between observations and simulations, and each model will be scored using two scoring functions. The resulting file will also be saved.
+8) Once the dictionary is extracted, we can compare these values to real observation data of the snow in order to detect which models performed well and which ones performed poorly. To do this, run notebook (6). This step calculates the differences between observations and simulations, and each model will be scored using two scoring functions. The resulting file will also be saved.
 
-8) Until this point, the analysis has been done individually for each model. Since the main objective is to use a multi-model mean, the last step consists of calculating this mean. From the multi-model mean, we can produce final maps of seasonal snow extent as a function of global warming levels, weighted by the scores. To perform this, use notebook (7).
+9) Until this point, the analysis has been done individually for each model. Since the main objective is to use a multi-model mean, the last step consists of calculating this mean. From the multi-model mean, we can produce final maps of seasonal snow extent as a function of global warming levels, weighted by the scores. To perform this, use notebook (7).
