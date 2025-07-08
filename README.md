@@ -9,20 +9,34 @@ Two main questions emerge from this problematic : is it scientifically justified
 
 ## Instructions on how to proceed
 
-1) The first step consists to run the first notebook (1) to create output data : verify that you obtain 25 different files at the end of the procedure. Note that this code was produced by my supervisor and I did not modify anything.
+### General informations
 
-2) The second step consists to convert all the useful files on a single and same reference grid to allow future comparisons. For that, use the notebook (2). Run all the cells and verify that new folders have been created.
+In a blank environment on Jupyter Notebook, you can access all the folders present in this GitHub repository. There are two main folders: "module" and "notebooks."
 
-3) For these new files, it is necessary to recompute the areacella (which corresponds to the area of each grid cell), very important variable to calculate the spatial extension of the snow. For this, you can run the notebook (3).
+The "module" folder contains three files: libs.py (where all the libraries are stored) and functions.py (where all the functions used in this work are grouped). Notebooks execute this module at the beginning to avoid calling all the libraries each time. You can open these files for more details if needed.
+The "notebooks" folder contains all the notebooks necessary to reproduce this work. These are numbered from 1 to 7, and it is important to follow this order. The names of the notebooks describe their contents.
+Finally, if you are more interested in this work, you can find the report in the "report" folder, along with all the associated figures.
 
-4) A supplementary step is necessary for a model which do not simulate the snow in the Greenland : the IPSL's one. It is important to add it for this model, thanks to the sftgif mask (ice land fraction) to have the same characteristics for all the models. For this, use the notebook (4).
+### Data
 
-5) At this stage, we have two output files for IPSL model. One named "IPSL-CM6A-LR_SW_reprojete.nc" (the oldest) and another named "IPSL-CM6A-LR2_SW_reprojete.nc" (the new). You have to delete manually the oldest one and rename the new one by the name of the old (you just have to delete the number 2).
+All the input and output data are provided and can be found in the shared storage of OpenReproLab, in the folder named "Data_LaurieV."
 
-6) Now all the models are similar, so we can visualize and compute the monthly snow extent for each model during the reference period (1995-2014). Snow extent values will be stored in a dictionnary extracted on a csv format, for further analysis. For that, use the notebook (5).
+### Instructions to reproduce the work - Use of notebooks
 
-7) When the dictionnary is extracted, we can compare these values to those of real data observations of the snow to detect models which made a good simulation of the snow and those that have a poor simulation. For that, you have to run the notebook (6).
-From the calculation of the differences between observations and simulations, each model will be scored by two scoring functions and this new file will be also extract.
+Please follow the steps in order, as each step produces intermediate results that are useful for the next part of the analysis. If you only want to reproduce certain notebooks, the intermediate data is already provided.
 
-8) Since here, analysis have been done individually for each model. As the problematic is focused on the use of a multi-model mean, this last step consist to realize this mean.
-From this multi-model mean we can produce final maps of the seasonal snow extension in function of global warming levels by weighting with the scores. To realize this mean and create the maps, use the notebook (7).
+1) The first step is to run the first notebook (1) to create output data. Verify that you obtain 25 different files at the end of the procedure. Note that this code was produced by my supervisor and I did not modify anything.
+
+2) The second step is to convert all the useful files to a single, consistent reference grid for future comparisons. For this, use notebook (2). Run all the cells and verify that new folders have been created.
+
+3) For these new files, it is necessary to recompute the areacella (the area of each grid cell), which is a very important variable for calculating the spatial extension of the snow. For this, run notebook (3).
+
+4) A supplementary step is necessary for a model that does not simulate snow in Greenland: the IPSL model. It is important to add snow data for this model using the sftgif mask (ice-land fraction) so that all models have the same characteristics. For this, use notebook (4).
+
+5) At this stage, we will have two output files for the IPSL model: one named "IPSL-CM6A-LR_SW_reprojete.nc" (the older one) and another named "IPSL-CM6A-LR2_SW_reprojete.nc" (the newer one). You need to manually delete the older file and rename the newer one to match the old name (simply remove the number "2").
+
+6) Now that all the models are consistent, we can visualize and compute the monthly snow extent for each model during the reference period (1995-2014). Snow extent values will be stored in a dictionary and exported to a CSV format for further analysis. For this, use notebook (5).
+
+7) Once the dictionary is extracted, we can compare these values to real observation data of the snow in order to detect which models performed well and which ones performed poorly. To do this, run notebook (6). This step calculates the differences between observations and simulations, and each model will be scored using two scoring functions. The resulting file will also be saved.
+
+8) Until this point, the analysis has been done individually for each model. Since the main objective is to use a multi-model mean, the last step consists of calculating this mean. From the multi-model mean, we can produce final maps of seasonal snow extent as a function of global warming levels, weighted by the scores. To perform this, use notebook (7).
