@@ -6,15 +6,15 @@ Most of the input data used in this project are stored on the spirit platform of
 
 To retrieve **historical snow cover (`snc`)** data:
 
-cd /bdd/CMIP6/CMIP/{institution}/{model}/historical/{realization}/LImon/snc/{grid}/latest
+`cd /bdd/CMIP6/CMIP/{institution}/{model}/historical/{realization}/LImon/snc/{grid}/latest`
 
-To retrieve historical near-surface air temperature (tas) data, simply replace LImon/snc with Amon/tas in the path:
+To retrieve **historical near-surface air temperature (`tas`)** data, simply replace `LImon/snc` with `Amon/tas` in the path:
 
-cd /bdd/CMIP6/CMIP/{institution}/{model}/historical/{realization}/Amon/tas/{grid}/latest
+`cd /bdd/CMIP6/CMIP/{institution}/{model}/historical/{realization}/Amon/tas/{grid}/latest`
 
 Replace {institution}, {model}, {realization}, and {grid} with the appropriate values for each model.
 
-For the realization, always choose the closest available to r1i1p1f1.
+For the realization, always choose the closest available to `r1i1p1f1`.
 
 The {grid} is often gr or gn, depending on the model.
 
@@ -22,15 +22,15 @@ You must repeat this operation for each model individually.
 
 Access Scenario Projections (SSP5-8.5):
 
-To retrieve future snow cover (snc) projections under the SSP5-8.5 scenario:
+To retrieve **future snow cover (`snc`) projections** under the SSP5-8.5 scenario:
 
-cd /bdd/CMIP6/ScenarioMIP/{institution}/{model}/ssp585/{realization}/LImon/snc/{grid}/latest
+`cd /bdd/CMIP6/ScenarioMIP/{institution}/{model}/ssp585/{realization}/LImon/snc/{grid}/latest`
 
-For temperature projections (tas), again replace LImon/snc with Amon/tas:
+For temperature projections (`tas`), again replace `LImon/snc` with `Amon/tas`:
 
-cd /bdd/CMIP6/ScenarioMIP/{institution}/{model}/ssp585/{realization}/Amon/tas/{grid}/latest
+`cd /bdd/CMIP6/ScenarioMIP/{institution}/{model}/ssp585/{realization}/Amon/tas/{grid}/latest`
 
-You can change the scenario (ssp585) to another one (e.g., ssp126, ssp245) if needed for additional experiments.
+You can change the scenario (`sp585`) to another one (e.g., `ssp126`, `ssp245`) if needed for additional experiments.
 
 
 ## Description of Input Data
