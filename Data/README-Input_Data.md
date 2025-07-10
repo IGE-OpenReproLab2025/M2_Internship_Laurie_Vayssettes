@@ -1,4 +1,4 @@
-## 📥 Retrieve Input Data
+## Retrieve Input Data
 
 Most of the input data used in this project are stored on the spirit platform of the ESPRI server at IPSL. Access to this platform requires authorization and is available only via a terminal session.
 
