@@ -38,6 +38,8 @@ from .functions import (
     recalculer_areacella,
     dictionnaire_to_csv,
     plot_monthly_snow_boxplot,
-    plot_heatmap_errors
+    plot_heatmap_errors,
+    scores_exp_normalises,
+    scores_gaussiens
 )
 

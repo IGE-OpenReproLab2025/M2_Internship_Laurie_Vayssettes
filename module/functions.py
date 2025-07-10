@@ -379,3 +379,28 @@ def adjust_label(label):
         return f"+{temp_val:.1f}°C"
     except ValueError:
         return label
+
+def scores_exp_normalises(valeurs):
+    """
+   Calculate normalized exponential scores from a table of values
+    """
+    min_val = np.min(valeurs)
+    max_val = np.max(valeurs)
+    # Éviter la division par zéro si max_val == min_val
+    if max_val == min_val:
+        return np.ones_like(valeurs)
+    scores_exp = np.exp(-(valeurs - min_val) / (max_val - min_val))
+    return scores_exp
+
+def scores_gaussiens(valeurs, sigma_scale=4):
+    """
+Calculate Gaussian-type scores from a table of values
+    """
+    min_val = np.min(valeurs)
+    max_val = np.max(valeurs)
+    mu = min_val
+    if max_val == min_val:
+        return np.ones_like(valeurs)
+    sigma = (max_val - min_val) / sigma_scale
+    scores = np.exp(-((valeurs - mu) ** 2) / (2 * sigma ** 2))
+    return scores
